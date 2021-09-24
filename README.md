@@ -1,3 +1,3 @@
 # README
 
-* Created form for creating new articles
+* Created edit update and delete functionality
