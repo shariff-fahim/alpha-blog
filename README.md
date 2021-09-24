@@ -1,3 +1,3 @@
 # README
 
-* Created edit update and delete functionality
+* Added partials to follow DRY
