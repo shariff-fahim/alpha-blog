@@ -1,12 +1,14 @@
 <h1> Article Listing Page </h1>
 <table>
   <tr>
+    <th>User</th>
     <th>Title</th>
     <th>Description</th>
     <th>Action</th>
   </tr>
   <% @articles.each do |a| %>
     <tr>
+      <td><%= a.user.username %></td>
       <td><%= a.title %></td>
       <td><%= a.description %></td>
       <td>
