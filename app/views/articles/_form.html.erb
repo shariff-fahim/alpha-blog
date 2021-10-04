@@ -1,3 +1,4 @@
+<%= render 'shared/errors', err_obj: @article %>
 <%= form_with(model: @article, local: true) do |f| %>
 <p>
   <%= f.label :title %> <br>
