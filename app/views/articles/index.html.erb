@@ -1,5 +1,9 @@
 <h1> Article Listing Page </h1>
 
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
+
 <%= render 'shared/articles' %>
 
 <p>

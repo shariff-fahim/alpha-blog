@@ -2,6 +2,10 @@
  Hello World
 </h1>
 
+<div class="flickr_pagination">
+  <%= will_paginate @users, :container => false %>
+</div>
+
 <% @users.each do |u| %>
- <h1> Hello <%= u.username %> </h1>
+ <h1><%= u.username %> </h1>
 <% end %>
