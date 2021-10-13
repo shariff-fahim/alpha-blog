@@ -1,11 +1,25 @@
 <h1>
- Hello World
+  Hello World
 </h1>
 
 <div class="flickr_pagination">
   <%= will_paginate @users, :container => false %>
 </div>
 
-<% @users.each do |u| %>
- <h1><%= u.username %> </h1>
-<% end %>
+<table>
+  <tr>
+    <th> Username <th>
+    <th> Action <th>
+  </tr>
+  <% @users.each do |u| %>
+    <tr>
+    <td> <h1><%= u.username %> </h1> <td>
+    <td>
+      <%= link_to('show', user_path(u)) %>
+      <% if logged_in? && u == current_user %>
+        <%= link_to('Edit', edit_user_path(u)) %>
+      <% end %>
+    <td>
+    </tr>
+  <% end %>
+</table>
