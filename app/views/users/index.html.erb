@@ -18,6 +18,7 @@
       <%= link_to('show', user_path(u)) %>
       <% if logged_in? && u == current_user %>
         <%= link_to('Edit', edit_user_path(u)) %>
+        <%= link_to('delete', user_path(u), method: :delete, data: {confirm: 'Are you sure?'}) %>
       <% end %>
     <td>
     </tr>
