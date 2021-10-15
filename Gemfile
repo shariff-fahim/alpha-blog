@@ -24,6 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'will_paginate', '~> 3.3'
 
+gem "view_component", require: "view_component/engine"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
