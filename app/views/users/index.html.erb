@@ -16,11 +16,19 @@
     <td> <h1><%= u.username %> </h1> <td>
     <td>
       <%= link_to('show', user_path(u)) %>
-      <% if logged_in? && u == current_user %>
-        <%= link_to('Edit', edit_user_path(u)) %>
-        <%= link_to('delete', user_path(u), method: :delete, data: {confirm: 'Are you sure?'}) %>
+      <% if logged_in? %>
+        <% if u == current_user %>
+          <%= link_to('Edit', edit_user_path(u)) %>
+        <% end %>
+        
+        <% if current_user.admin? %>
+          <%= link_to('delete', user_path(u), method: :delete, data: {confirm: 'Are you sure?'}) %>
+        <% end %>
+
       <% end %>
+
     <td>
     </tr>
   <% end %>
+  
 </table>
