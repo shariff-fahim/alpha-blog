@@ -1,0 +1,11 @@
+<h1> Categories Listing Page </h1>
+
+<div class="flickr_pagination">
+  <%= will_paginate @categories, :container => false %>
+</div>
+
+<%= render 'shared/categories' %>
+
+<p>
+<%= link_to('Create new Category', new_category_path) %>
+</p>

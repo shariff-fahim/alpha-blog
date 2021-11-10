@@ -1,5 +1,5 @@
 <% if err_obj.errors.any? %>
-<h1> The following errors prevented from saving the <%= err_obj.class.name.downcase %> </h1>
+<h1 class="checking-errors"> The following errors prevented from saving the <%= err_obj.class.name.downcase %> </h1>
 <ul>
   <% err_obj.errors.full_messages.each do |msg| %>
     <li><%= msg %> </li>
