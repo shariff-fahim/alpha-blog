@@ -2,6 +2,12 @@
 <p><strong> User: </strong> <%= @article.user.username %> </p>
 <p><strong> Title: </strong> <%= @article.title %> </p>
 <p><strong> Description: </strong> <%= @article.description %> </p>
+<p><strong> Category: </strong>
+  <% if @article.categories.any? %>
+    <%= render @article.categories %>
+  <% end %>
+
+</p>
 
 <p>
   <% if logged_in? && (@article.user == current_user || current_user.admin?) %>

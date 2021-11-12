@@ -1,13 +1,18 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Number of Articles</th>
     <th>Action</th>
   </tr>
   <% @categories.each do |c| %>
     <tr>
       <td><%= c.name %></td>
+      <td> <%= c.articles.count %> </td>
       <td>
         <%= link_to('Show', category_path(c)) %>
+        <% if logged_in? && current_user.admin? %>
+          <%= link_to('Edit', edit_category_path(c)) %>
+        <% end %>
       </td>
     </tr>
   <% end %>

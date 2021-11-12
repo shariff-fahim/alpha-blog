@@ -3,6 +3,7 @@
     <th>User</th>
     <th>Title</th>
     <th>Description</th>
+    <th>Category</th>
     <th>Action</th>
   </tr>
   <% @articles.each do |a| %>
@@ -10,6 +11,13 @@
       <td><%= a.user.username %></td>
       <td><%= a.title %></td>
       <td><%= a.description %></td>
+      <td>
+        <p>
+          <% if a.categories.any? %>
+            <%= render a.categories %>
+          <% end %>
+        </p>
+      </td>
       <td>
         <%= link_to('Show', article_path(a)) %>
         

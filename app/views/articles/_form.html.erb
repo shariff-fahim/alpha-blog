@@ -9,6 +9,12 @@
   <%= f.text_area :description %>
 </p>
 <p>
+  <%= f.label :Category %> <br>
+  <%= f.collection_select( :category_ids, Category.all, :id, :name, 
+                          { prompt: "Make your selections from the list below (can be empty)" },
+                          { multiple: true } ) %>
+</p>
+<p>
   <%= f.submit %>
 </p>
 <% end %>
